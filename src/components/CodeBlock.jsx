@@ -31,7 +31,7 @@ function CodeBlock({ code }) {
 
       <div className="card bg-base-100 shadow-sm">
         <div className="card-body p-0">
-          <pre className="overflow-x-auto mb-0 p-4 rounded-box">
+          <pre className="overflow-x-auto mb-0 rounded-box p-3 text-sm md:p-4 md:text-base">
             <code ref={codeRef} className="language-javascript">{code}</code>
           </pre>
         </div>

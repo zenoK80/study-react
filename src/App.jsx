@@ -121,7 +121,18 @@ function App() {
       <input id="sidebar-toggle" type="checkbox" className="drawer-toggle" />
 
       <div className="drawer-content">
-        <main className="min-h-screen p-8">
+        <header className="sticky top-0 z-10 flex items-center gap-3 border-b border-base-300 bg-base-100 px-4 py-3 lg:hidden">
+          <label htmlFor="sidebar-toggle" className="btn btn-square btn-ghost">
+            ☰
+          </label>
+
+          <div>
+            <h1 className="text-lg font-bold">React Study</h1>
+            <p className="text-xs opacity-60">JSX Practice</p>
+          </div>
+        </header>
+
+        <main className="min-h-screen p-4 md:p-8">
           {currentLesson ? selectedLessonView : notFoundView}
         </main>
       </div>

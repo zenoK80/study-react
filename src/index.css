@@ -20,6 +20,10 @@ pre {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
+pre {
+  max-width: 100%;
+}
+
 /* ==========================================
    Preview 영역 기본 표시 스타일
    ========================================== */
