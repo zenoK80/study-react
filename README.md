@@ -1,6 +1,28 @@
 # React 학습 정리
 https://zenok80.github.io/study-react/
 
+```text
+📁 study-react/
+├── 📄 index.html              # React 앱이 들어갈 HTML 진입점
+├── 📄 vite.config.js          # Vite 설정 및 GitHub Pages base 경로 설정
+├── 📄 package.json            # 실행 스크립트와 의존성 관리
+├── 📁 .github/workflows/      # GitHub Actions 배포 설정
+│   └── 📄 deploy.yml          # GitHub Pages 자동 배포 workflow
+├── 📁 src/
+│   ├── 📄 main.jsx            # React 앱 시작점
+│   ├── 📄 App.jsx             # URL 기준으로 현재 실습을 선택하고 화면 구성
+│   ├── 📄 lesson.js           # part별 JSX 실습 파일 목록 및 동적 import 관리
+│   ├── 📁 components/         # 학습 사이트 공통 화면 컴포넌트
+│   │   ├── 📄 StudyLayout.jsx # Preview와 Source Code를 배치하는 레이아웃
+│   │   ├── 📄 Preview.jsx     # 현재 JSX 실습 실행 결과 영역
+│   │   └── 📄 CodeBlock.jsx   # 현재 JSX 실습 소스 코드 출력 영역
+│   ├── 📁 insight/            # 알게 된 사실들 정리
+│   ├── 📁 part1/              # React 기초 & 렌더링 원리 실습
+│   ├── 📁 part2/              # 심화 훅 & 상태 관리 패턴 실습
+│   └── 📁 part3/              # 실무 라이브러리 실습
+└── 📁 dist/                   # npm run build 결과물
+```
+
 ## Part 1. React 기초 & 렌더링 원리
 * `2026.08.29` **01_**: JSX와 React.createElement 동작 원리 및 가상 DOM 비교
 * `2026.08.29` **02_**: useState/useEffect 타이머를 활용한 가상 DOM 부분 업데이트
