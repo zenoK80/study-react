@@ -1,4 +1,5 @@
 # React 학습 정리
+https://zenok80.github.io/study-react/
 
 ## Part 1. React 기초 & 렌더링 원리
 * `2026.08.29` **01_**: JSX와 React.createElement 동작 원리 및 가상 DOM 비교
