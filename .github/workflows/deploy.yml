@@ -1,0 +1,87 @@
+# .github/workflows/deploy.yml
+# ----------------------------------------------------------------------------------
+# 역할: main 브랜치에 push하면 React/Vite 앱을 자동으로 빌드하고 GitHub Pages에 배포한다.
+# 이유: GitHub Pages는 src/App.jsx를 그대로 실행하지 못하고, npm run build 결과물(dist)을 배포해야 한다.
+# ----------------------------------------------------------------------------------
+
+name: Deploy React Study to GitHub Pages
+
+# ----------------------------------------------------------------------------------
+# [1] workflow 실행 조건
+# main 브랜치에 push되거나, GitHub Actions 화면에서 수동 실행하면 동작한다.
+# ----------------------------------------------------------------------------------
+on:
+  push:
+    branches: ["main"]
+
+  workflow_dispatch:
+
+# ----------------------------------------------------------------------------------
+# [2] GitHub Pages 배포에 필요한 권한
+# contents: 저장소 코드 읽기
+# pages: GitHub Pages에 배포하기
+# id-token: GitHub 배포 인증에 사용
+# ----------------------------------------------------------------------------------
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# ----------------------------------------------------------------------------------
+# [3] 동시에 여러 배포가 겹치지 않게 제어
+# 새 push가 오면 이전 배포 작업은 취소하고 최신 배포만 진행한다.
+# ----------------------------------------------------------------------------------
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+# ----------------------------------------------------------------------------------
+# [4] 실제 배포 작업
+# ubuntu 환경에서 코드를 받고, Node를 설치하고, 빌드한 뒤 dist를 Pages로 올린다.
+# ----------------------------------------------------------------------------------
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    runs-on: ubuntu-latest
+
+    steps:
+      # 저장소 코드를 GitHub Actions 실행 환경으로 가져온다.
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # Vite 빌드에 필요한 Node.js를 준비한다.
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      # package-lock.json 기준으로 의존성을 설치한다.
+      - name: Install dependencies
+        run: npm ci
+
+      # Vite 빌드를 실행해서 dist 폴더를 만든다.
+      - name: Build
+        run: npm run build
+
+      # /part1/01 같은 주소로 직접 접속해도 index.html을 보여주기 위한 fallback 파일 생성.
+      - name: Copy SPA fallback
+        run: cp dist/index.html dist/404.html
+
+      # GitHub Pages 배포 환경을 준비한다.
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      # 빌드 결과물인 dist 폴더를 Pages 배포용 artifact로 업로드한다.
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
+
+      # 업로드한 dist 결과물을 실제 GitHub Pages 사이트로 배포한다.
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
