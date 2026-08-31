@@ -53,14 +53,23 @@ export default function Cafeteria() {
   const [state, dispatch] = useReducer(cafeteriaReducer, initialState);
 
   return (
-    <div>
+    <div className="space-y-4">
       {/* -------------------------------------------------------------------------- */}
       {/* [4] UI 화면 구성 및 dispatch 연결                                          */}
       {/* - dispatch({ type: '...' }): 버튼 클릭 시 해당 액션을 리듀서로 보냄           */}
       {/* -------------------------------------------------------------------------- */}
-      <p>현재 밥 재고: {state.rice}</p>
-      <button onClick={() => dispatch({ type: 'COOK_RICE' })}>밥하기 +10</button>
-      <button onClick={() => dispatch({ type: 'SERVE_RICE' })}>배식하기 -1</button>
+      <div className="stats shadow bg-base-200">
+        <div className="stat">
+          <div className="stat-title">현재 밥 재고</div>
+          <div className="stat-value text-primary">{state.rice}</div>
+          <div className="stat-desc">useReducer 상태값</div>
+        </div>
+      </div>
+
+      <div className="flex flex-wrap gap-2">
+        <button className="btn btn-primary" onClick={() => dispatch({ type: 'COOK_RICE' })}>밥하기 +10</button>
+        <button className="btn btn-outline" onClick={() => dispatch({ type: 'SERVE_RICE' })}>배식하기 -1</button>
+      </div>
     </div>
   );
 }

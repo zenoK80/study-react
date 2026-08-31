@@ -92,25 +92,21 @@ export default function TicketBooking() {
   const seats = ['A1', 'A2', 'A3', 'A4', 'A5'];
 
   return (
-    <div>
+    <div className="space-y-5">
       {/* VIP 등급 전환 버튼 */}
-      <button onClick={() => dispatch({ type: ACTION_TYPES.TOGGLE_VIP })}>
+      <button className={state.isVip ? "btn btn-warning" : "btn btn-outline"} onClick={() => dispatch({ type: ACTION_TYPES.TOGGLE_VIP })}>
         등급 전환 (현재: {state.isVip ? 'VIP' : '일반'})
       </button>
 
       {/* 좌석 선택 버튼 리스트 */}
-      <div style={{ margin: '10px 0' }}>
+      <div className="flex flex-wrap gap-2">
         {seats.map(seat => {
           const isSelected = state.selectedSeats.includes(seat);
           return (
             <button
               key={seat}
+              className={isSelected ? "btn btn-success" : "btn btn-outline"}
               onClick={() => dispatch({ type: ACTION_TYPES.TOGGLE_SEAT, payload: seat })}
-              style={{
-                backgroundColor: isSelected ? '#4CAF50' : '#e7e7e7',
-                color: isSelected ? 'white' : 'black',
-                marginRight: '5px'
-              }}
             >
               {seat}
             </button>
@@ -119,10 +115,12 @@ export default function TicketBooking() {
       </div>
 
       {/* 결제 정보 출력 영역 */}
-      <div>
-        <p><strong>선택된 좌석:</strong> {state.selectedSeats.length > 0 ? state.selectedSeats.join(', ') : '없음'}</p>
-        <p><strong>사용자 등급:</strong> {state.isVip ? 'VIP (20% 할인 적용 중)' : '일반'}</p>
-        <h3>최종 결제 금액: {state.totalAmount.toLocaleString()}원</h3>
+      <div className="card bg-base-200 shadow-sm">
+        <div className="card-body">
+          <p><strong>선택된 좌석:</strong> {state.selectedSeats.length > 0 ? state.selectedSeats.join(', ') : '없음'}</p>
+          <p><strong>사용자 등급:</strong> {state.isVip ? 'VIP (20% 할인 적용 중)' : '일반'}</p>
+          <h3 className="text-2xl font-bold">최종 결제 금액: {state.totalAmount.toLocaleString()}원</h3>
+        </div>
       </div>
     </div>
   );

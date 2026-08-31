@@ -17,8 +17,10 @@
 //----------------------------------------------------------------------------------
 function Card({ children }) {
   return (
-    <div>
-      {children}
+    <div className="card bg-base-200 shadow-sm">
+      <div className="card-body">
+        {children}
+      </div>
     </div>
   );
 }
@@ -27,22 +29,34 @@ function Card({ children }) {
 //----------------------------------------------------------------------------------
 // [2] Profile 컴포넌트 (합성)
 // - 역할: 부모의 name과 children을 받아 Card 틀 안에 배치
-// - 원리: App에서 넘어온 데이터를 자식(Card)에게 전달 (단방향 흐름)
+// - 원리: 상위 컴포넌트에서 넘어온 데이터를 자식(Card)에게 전달 (단방향 흐름)
 //----------------------------------------------------------------------------------
 function Profile({ name, children }) {
   return (
     <Card>
-      <h3>[Profile]</h3>
+      <h3 className="card-title">Profile</h3>
       <p>Name: {name}</p>
-      {children}
+
+      <div className="alert">
+        <span>{children}</span>
+      </div>
     </Card>
   );
 }
 //----------------------------------------------------------------------------------
 
 //----------------------------------------------------------------------------------
-// [3] 컴포넌트 내보내기
-// - 원리: export default로 파일당 1개 대표 컴포넌트 추출
+// [3] ChildrenPractice 실행용 컴포넌트
+// - 역할: Profile 컴포넌트에 실제 props(name, children)를 넘겨서 화면에 보여줌
+// - 원리: 학습 사이트는 <LessonComponent />만 실행하므로, 파일 내부에서 예시 props를 직접 전달
 //----------------------------------------------------------------------------------
-export default Profile;
+export default function ChildrenPractice() {
+  return (
+    <div className="space-y-4">
+      <Profile name="React Learner">
+        <p>children으로 전달된 내용입니다.</p>
+      </Profile>
+    </div>
+  );
+}
 //----------------------------------------------------------------------------------

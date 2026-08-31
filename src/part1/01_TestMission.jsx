@@ -41,9 +41,22 @@ export default function TestMission() {
   // - 원리: JSX 중괄호({el1}, {el2})를 사용해 자바스크립트 객체 변수를 HTML 내에 바인딩
   //--------------------------------------------------------------------------------
   return (
-    <div>
-      <div>{el1}</div>
-      <div>{el2}</div>
+    <div className="space-y-4">
+      <div className="alert alert-info">
+        <span>JSX로 만든 엘리먼트와 React.createElement로 만든 엘리먼트는 같은 결과를 렌더링합니다.</span>
+      </div>
+
+      <div className="grid gap-4 md:grid-cols-2">
+        <div className="rounded-box border border-base-300 bg-base-200 p-4">
+          <p className="text-sm opacity-70 mb-2">JSX 방식</p>
+          {el1}
+        </div>
+
+        <div className="rounded-box border border-base-300 bg-base-200 p-4">
+          <p className="text-sm opacity-70 mb-2">React.createElement 방식</p>
+          {el2}
+        </div>
+      </div>
     </div>
   );
 }

@@ -85,32 +85,37 @@ export default function ShoppingCart() {
   };
 
   return (
-    <div>
+    <div className="space-y-4">
       {/* -------------------------------------------------------------------------- */}
       {/* [5] UI 구성 및 액션 바인딩                                                  */}
       {/* -------------------------------------------------------------------------- */}
-      <button onClick={handleAddItem}>랜덤 상품 추가</button>
+      <button className="btn btn-primary" onClick={handleAddItem}>랜덤 상품 추가</button>
 
-      <ul>
+      <ul className="menu bg-base-200 rounded-box">
         {state.items.length === 0 ? (
-          <li>장바구니가 비었습니다.</li>
+          <li><span className="opacity-70">장바구니가 비었습니다.</span></li>
         ) : (
           state.items.map(item => (
             <li key={item.id}>
-              <span>{item.name} ({item.price.toLocaleString()}원)</span>
-              <button onClick={() => dispatch({ type: 'REMOVE_ITEM', payload: item.id })}>
-                삭제
-              </button>
+              <div className="flex items-center justify-between gap-3">
+                <span>{item.name} ({item.price.toLocaleString()}원)</span>
+                <button className="btn btn-xs btn-error" onClick={() => dispatch({ type: 'REMOVE_ITEM', payload: item.id })}>삭제</button>
+              </div>
             </li>
           ))
         )}
       </ul>
 
-      <hr />
+      <div className="stats shadow bg-base-200">
+        <div className="stat">
+          <div className="stat-title">총 수량</div>
+          <div className="stat-value">{state.totalQty}개</div>
+        </div>
 
-      <div>
-        <p>총 수량: {state.totalQty}개</p>
-        <p>총 결제 금액: {state.totalPrice.toLocaleString()}원</p>
+        <div className="stat">
+          <div className="stat-title">총 결제 금액</div>
+          <div className="stat-value text-primary">{state.totalPrice.toLocaleString()}원</div>
+        </div>
       </div>
     </div>
   );

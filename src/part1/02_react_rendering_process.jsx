@@ -42,10 +42,19 @@ export default function ReactRenderingProcess() {
   // - 원리: count가 변경되어도 리액트 Diffing 알고리즘에 의해 <h1> 내부 숫자만 실제 DOM에 교체됨
   //--------------------------------------------------------------------------------
   return (
-    <div>
-      <h2>Virtual DOM 부분 업데이트 실험</h2>
-      <h1>Count: {count}</h1>
-      <p>전체 페이지가 아닌 바뀐 수치 부분만 선택해서 업데이트됩니다.</p>
+    <div className="space-y-4">
+      <div>
+        <h2 className="text-2xl font-bold">Virtual DOM 부분 업데이트 실험</h2>
+        <p className="opacity-70 mt-1">count 상태가 바뀔 때 숫자 부분만 다시 렌더링되는지 확인합니다.</p>
+      </div>
+
+      <div className="stats shadow bg-base-200">
+        <div className="stat">
+          <div className="stat-title">Count</div>
+          <div className="stat-value text-primary">{count}</div>
+          <div className="stat-desc">1초마다 자동 증가</div>
+        </div>
+      </div>
     </div>
   );
 }

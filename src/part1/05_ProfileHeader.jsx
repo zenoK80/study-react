@@ -15,7 +15,7 @@
 // - 원리: ({ symbol }) 구조 분해 할당으로 props 객체에서 바로 추출
 //----------------------------------------------------------------------------------
 function Emoji({ symbol }) {
-  return <span>{symbol}</span>;
+  return <span className="text-4xl">{symbol}</span>;
 }
 //----------------------------------------------------------------------------------
 
@@ -25,7 +25,7 @@ function Emoji({ symbol }) {
 // - 원리: 상위 컴포넌트에서 넘어온 name props를 받아 JSX 중괄호 표현식에 바인딩
 //----------------------------------------------------------------------------------
 function Title({ name }) {
-  return <h2>Welcome, {name}!</h2>;
+  return <h2 className="card-title text-2xl">Welcome, {name}!</h2>;
 }
 //----------------------------------------------------------------------------------
 
@@ -35,7 +35,7 @@ function Title({ name }) {
 // - 원리: 다중 props 인자를 ({ age, country }) 형태로 한 번에 구조 분해하여 사용
 //----------------------------------------------------------------------------------
 function UserInfo({ age, country }) {
-  return <p>Age: {age} | Country: {country}</p>;
+  return <p className="opacity-70">Age: {age} | Country: {country}</p>;
 }
 //----------------------------------------------------------------------------------
 
@@ -46,19 +46,33 @@ function UserInfo({ age, country }) {
 //----------------------------------------------------------------------------------
 function ProfileHeader({ name, age, country }) {
   return (
-    <header>
-      <Emoji symbol="🧑‍💻" />
-      <Title name={name} />
-      <UserInfo age={age} country={country} />
+    <header className="card bg-base-200 shadow-sm">
+      <div className="card-body">
+        <div className="flex items-center gap-4">
+          <Emoji symbol="🧑‍💻" />
+
+          <div>
+            <Title name={name} />
+            <UserInfo age={age} country={country} />
+          </div>
+        </div>
+      </div>
     </header>
   );
 }
 //----------------------------------------------------------------------------------
 
 //----------------------------------------------------------------------------------
-// [5] ProfileHeader 컴포넌트 내보내기
-// - 역할: 완제품 형태의 ProfileHeader를 메인 모듈로 내보냄
-// - 원리: export default 구문으로 타 파일(App.jsx)에서 쉽게 불러와 사용할 수 있게 함
+// [5] ProfileHeaderPractice 실행용 컴포넌트
+// - 역할: ProfileHeader 컴포넌트에 실제 props를 넘겨서 화면에 보여줌
+// - 원리: 학습 사이트는 <LessonComponent />만 실행하므로, 파일 내부에서 예시 props를 직접 전달
 //----------------------------------------------------------------------------------
-export default ProfileHeader;
+export default function ProfileHeaderPractice() {
+  return (
+    <div className="space-y-4">
+      <ProfileHeader name="React Learner" age={20} country="Korea" />
+      <ProfileHeader name="Study Mate" age={25} country="Japan" />
+    </div>
+  );
+}
 //----------------------------------------------------------------------------------

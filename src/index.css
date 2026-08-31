@@ -1,38 +1,92 @@
 /* ==========================================
-   index.css - 글로벌 베이스 & 변수 설정
+   index.css - 글로벌 베이스 설정
    ========================================== */
 
-/* 1. 글로벌 테마 변수 (다크/라이트 모드 대응용) */
-:root {
-  --bg-color: #ffffff;
-  --text-color: #212529;
-  --border-color: #e9ecef;
-  --primary-color: #0070f3;
-  --primary-hover: #0051a8;
-  --code-bg: #f8f9fa;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-}
-
-/* 2. 전역 스타일 초기화 */
-html, body {
+html,
+body {
   width: 100%;
   height: 100%;
   margin: 0;
   padding: 0;
-  background-color: var(--bg-color);
-  color: var(--text-color);
 }
 
-/* 3. 루트 컨테이너 레이아웃 */
 #root {
   width: 100%;
   min-height: 100vh;
 }
 
-/* 4. 코드 블록 기본 스타일 */
-code, pre {
+code,
+pre {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
-  background-color: var(--code-bg);
-  border-radius: 4px;
+}
+
+/* ==========================================
+   Preview 영역 기본 표시 스타일
+   ========================================== */
+
+/*----------------------------------------------------------------------------------
+  [1] 실습 컴포넌트 안의 기본 button을 실제 버튼처럼 보이게 처리
+  이유: daisyUI는 className="btn"이 붙은 버튼만 자동으로 꾸며준다.
+----------------------------------------------------------------------------------*/
+.study-preview button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.5rem;
+  margin: 0.25rem 0.35rem 0.25rem 0;
+  padding: 0.5rem 0.9rem;
+  border: 1px solid #64748b;
+  border-radius: 0.5rem;
+  background-color: #1f2937;
+  color: #f8fafc;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.08) inset, 0 6px 14px rgba(0, 0, 0, 0.18);
+}
+
+.study-preview button:hover {
+  background-color: #334155;
+  border-color: #94a3b8;
+}
+
+.study-preview button.btn-primary {
+  border-color: #60a5fa;
+  background-color: #2563eb;
+}
+
+.study-preview button.btn-success {
+  border-color: #4ade80;
+  background-color: #16a34a;
+}
+
+.study-preview button.btn-warning {
+  border-color: #facc15;
+  background-color: #ca8a04;
+}
+
+.study-preview button.btn-error {
+  border-color: #f87171;
+  background-color: #dc2626;
+}
+
+/*----------------------------------------------------------------------------------
+  [2] Preview 안의 기본 목록과 문단 간격 정리
+----------------------------------------------------------------------------------*/
+.study-preview ul,
+.study-preview ol {
+  margin: 0.5rem 0 1rem 1.25rem;
+}
+
+.study-preview li {
+  margin: 0.2rem 0;
+}
+
+.study-preview p {
+  margin: 0.4rem 0;
+}
+
+.study-preview h3 {
+  margin: 1.25rem 0 0.5rem;
+  font-size: 1.05rem;
+  font-weight: 700;
 }
