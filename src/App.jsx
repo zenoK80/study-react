@@ -89,7 +89,7 @@ function App() {
   //----------------------------------------------------------------------------------
   // [9] 사이드바에서 part별로 실습 목록을 구분해서 보여줄 화면 만들기
   //----------------------------------------------------------------------------------
-  const sidebarView = ["part1", "part2", "part3"].map(partName => {
+  const sidebarView = ["part1", "part2", "part3", "basic", "intermediate", "advanced"].map(partName => {
     const partLessons = lessonFiles.filter(lessonItem => {
       return lessonItem.part === partName;
     });

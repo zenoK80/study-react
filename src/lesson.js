@@ -22,6 +22,14 @@ export const lessonFiles = [
 
   // part3
   // { part: "part3", lesson: "01", title: "01_파일이름", path: "./part3/01_파일이름.jsx" },
+
+  // basic
+  { part: "basic", lesson: "01", title: "01_react-as-a-ui-library", path: "./basic/01_react-as-a-ui-library.jsx" },
+
+  // intermediate
+
+  // advanced
+
 ];
 
 // ----------------------------------------------------------------------------
@@ -30,7 +38,7 @@ export const lessonFiles = [
 // import.meta.glob()는 Vite 기능이다.
 // "./part*/*.jsx" 패턴에 맞는 파일들을 찾아서 객체로 만든다.
 // 객체의 key는 파일 경로, value는 그 파일을 import하는 함수다.
-const lessonComponentModules = import.meta.glob("./part*/*.jsx");
+const lessonComponentModules = import.meta.glob("./{part*,basic,intermediate,advanced}/*.jsx");
 
 export async function loadLessonComponent(path) {
   // path 예시: "./part1/01_TestMission.jsx"
@@ -52,7 +60,7 @@ export async function loadLessonComponent(path) {
 // ----------------------------------------------------------------------------
 // ?raw를 사용하면 JSX 파일을 실행하지 않고 파일 내용 자체를 문자열로 가져온다.
 // import: "default"는 raw 문자열을 바로 기본값으로 받겠다는 뜻이다.
-const lessonSourceModules = import.meta.glob("./part*/*.jsx", {
+const lessonSourceModules = import.meta.glob("./{part*,basic,intermediate,advanced}/*.jsx", {
   query: "?raw",
   import: "default",
 });
