@@ -39,6 +39,7 @@ https://zenok80.github.io/study-react/
 
 ## basic. React 기본기와 컴포넌트 모델
 * `2026.09.04` **01_**: React는 무엇을 해결하는가
+* `2026.09.05` **02_**: JSX 문법과 트랜스파일 이해
 
 ---
 
