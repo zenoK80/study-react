@@ -45,7 +45,10 @@ export default function Cafeteria(){
   const [state,dispatch] = useReducer(cafeteriaReducer,initialState);
 
   function handleServeRice(){
-    if(state.rice <= 0) alert('남은 밥이 없습니다.') return;
+    if(state.rice <= 0) {
+      alert('남은 밥이 없습니다.');
+      return;
+    }
     dispatch( {type:"SERVE_RICE"} );
   }
 

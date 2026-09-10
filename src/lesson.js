@@ -45,7 +45,7 @@ export async function loadLessonComponent(path) {
 // ----------------------------------------------------------------------------
 // ?raw를 사용하면 JSX 파일을 실행하지 않고 파일 내용 자체를 문자열로 가져온다.
 // import: "default"는 raw 문자열을 바로 기본값으로 받겠다는 뜻이다.
-const lessonSourceModules = import.meta.glob("./{part*,basic,intermediate,advanced}/*.{jsx,tsx}",, {
+const lessonSourceModules = import.meta.glob("./{part*,basic,intermediate,advanced}/*.{jsx,tsx}", {
   query: "?raw",
   import: "default",
 });
