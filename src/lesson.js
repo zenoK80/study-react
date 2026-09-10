@@ -7,13 +7,13 @@
 // App.jsx는 이 배열을 보고 사이드바 목록과 현재 선택된 실습 정보를 만든다.
 export const lessonFiles = [
   // part1
-  { part: "part1", lesson: "01", title: "01_TestMission", path: "./part1/01_TestMission.jsx" },
+  { part: "part1", lesson: "01", title: "01_Test", path: "./part1/01_TestMission.jsx" },
 
   // part2
-  { part: "part2", lesson: "01", title: "01_Cafeteria", path: "./part2/01_Cafeteria.jsx" },
+  { part: "part2", lesson: "01", title: "01_test", path: "./part2/01_Cafeteria.jsx" },
 
   // part3
-  // { part: "part3", lesson: "01", title: "01_파일이름", path: "./part3/01_파일이름.jsx" },
+  { part: "part3", lesson: "01", title: "01_test", path: "./part3/01_.jsx" },
 
 ];
 

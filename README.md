@@ -24,7 +24,7 @@ https://zenok80.github.io/study-react/
 ```
 # 기초
 ## Part 1. React 기초 & 렌더링 원리
-<!-- * `2026.08.29` **01_**: JSX와 React.createElement 동작 원리 및 가상 DOM 비교 -->
+* `2026.09.10` **01_**: test
 
 
 
@@ -32,14 +32,13 @@ https://zenok80.github.io/study-react/
 
 # 중급
 ## Part 2. 심화 훅 & 상태 관리 패턴
-<!-- * `2026.08.29` **01_**: useReducer 기초, dispatch와 action을 활용한 밥 재고 관리 -->
-
+* `2026.09.10` **01_**: test
 
 ---
 
 # 고급
 ## Part 3. 실무 라이브러리
-<!-- * `2026.08.29` **01_**: useReducer 기초, dispatch와 action을 활용한 밥 재고 관리 -->
+* `2026.09.10` **01_**: test
 
 
 
