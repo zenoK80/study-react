@@ -8,27 +8,12 @@
 export const lessonFiles = [
   // part1
   { part: "part1", lesson: "01", title: "01_TestMission", path: "./part1/01_TestMission.jsx" },
-  { part: "part1", lesson: "02", title: "02_react_rendering_process", path: "./part1/02_react_rendering_process.jsx" },
-  { part: "part1", lesson: "03", title: "03_Hello", path: "./part1/03_Hello.jsx" },
-  { part: "part1", lesson: "04", title: "04_Greeting", path: "./part1/04_Greeting.jsx" },
-  { part: "part1", lesson: "05", title: "05_ProfileHeader", path: "./part1/05_ProfileHeader.jsx" },
-  { part: "part1", lesson: "06", title: "06_ChildrenPractice", path: "./part1/06_ChildrenPractice.jsx" },
-  { part: "part1", lesson: "07", title: "07_ListRendering", path: "./part1/07_ListRendering.jsx" },
 
   // part2
   { part: "part2", lesson: "01", title: "01_Cafeteria", path: "./part2/01_Cafeteria.jsx" },
-  { part: "part2", lesson: "02", title: "02_ShoppingCart", path: "./part2/02_ShoppingCart.jsx" },
-  { part: "part2", lesson: "03", title: "03_TicketBooking", path: "./part2/03_TicketBooking.jsx" },
 
   // part3
   // { part: "part3", lesson: "01", title: "01_파일이름", path: "./part3/01_파일이름.jsx" },
-
-  // basic
-  { part: "basic", lesson: "01", title: "01_react-as-a-ui-library", path: "./basic/01_react-as-a-ui-library.jsx" },
-
-  // intermediate
-
-  // advanced
 
 ];
 
