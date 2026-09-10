@@ -7,13 +7,13 @@
 // App.jsx는 이 배열을 보고 사이드바 목록과 현재 선택된 실습 정보를 만든다.
 export const lessonFiles = [
   // part1
-  { part: "part1", lesson: "01", title: "01_Test", path: "./part1/01_TestMission.jsx" },
+  { part: "part1", lesson: "01", title: "01_React의 탄생과 JSX의 진짜 얼굴", path: "./part1/01_.jsx" },
 
   // part2
-  { part: "part2", lesson: "01", title: "01_test", path: "./part2/01_Cafeteria.jsx" },
+  { part: "part2", lesson: "01", title: "01_급식실 재고 관리 시스템 구현", path: "./part2/01_.jsx" },
 
   // part3
-  { part: "part3", lesson: "01", title: "01_test", path: "./part3/01_.jsx" },
+  { part: "part3", lesson: "01", title: "01_타입스크립트", path: "./part3/01_.jsx" },
 
 ];
 
@@ -23,7 +23,7 @@ export const lessonFiles = [
 // import.meta.glob()는 Vite 기능이다.
 // "./part*/*.jsx" 패턴에 맞는 파일들을 찾아서 객체로 만든다.
 // 객체의 key는 파일 경로, value는 그 파일을 import하는 함수다.
-const lessonComponentModules = import.meta.glob("./{part*,basic,intermediate,advanced}/*.jsx");
+const lessonComponentModules = import.meta.glob("./{part*,basic,intermediate,advanced}/*.{jsx,tsx}");
 
 export async function loadLessonComponent(path) {
   // path 예시: "./part1/01_TestMission.jsx"
@@ -45,7 +45,7 @@ export async function loadLessonComponent(path) {
 // ----------------------------------------------------------------------------
 // ?raw를 사용하면 JSX 파일을 실행하지 않고 파일 내용 자체를 문자열로 가져온다.
 // import: "default"는 raw 문자열을 바로 기본값으로 받겠다는 뜻이다.
-const lessonSourceModules = import.meta.glob("./{part*,basic,intermediate,advanced}/*.jsx", {
+const lessonSourceModules = import.meta.glob("./{part*,basic,intermediate,advanced}/*.{jsx,tsx}",, {
   query: "?raw",
   import: "default",
 });
