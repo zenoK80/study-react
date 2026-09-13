@@ -29,8 +29,8 @@ const initialState = { rice: 10 };
 // -------------------------------------------------------------------------------------
 function cafeteriaReducer(state,action){
   switch (action.type) {
-    case 'COOK_RICE': return { ...state, rice:state.rice + 10}; break;
-    case 'SERVE_RICE': if(state.rice <=0 ) return state; return { ...state, rice:state.rice - 1}; break;
+    case 'COOK_RICE': return { ...state, rice:state.rice + 10};
+    case 'SERVE_RICE': if(state.rice <=0 ) return state; return { ...state, rice:state.rice - 1};
     default: return state;
   }
 }
