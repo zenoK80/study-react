@@ -9,14 +9,17 @@ export const lessonFiles = [
   // part1
   { part: "part1", lesson: "01", title: "01_React의 탄생과 JSX의 진짜 얼굴", path: "./part1/01_.jsx" },
   { part: "part1", lesson: "02", title: "02_React는 화면을 어떻게 그리고 바꿀까", path: "./part1/02_.jsx" },
+  { part: "part1", lesson: "03", title: "03_나만의 첫 함수형 컴포넌트 만들기", path: "./part1/03_.jsx" },
 
   // part2
   { part: "part2", lesson: "01", title: "01_급식실 재고 관리 시스템 구현", path: "./part2/01_.jsx" },
   { part: "part2", lesson: "02", title: "02_프로 쇼핑 카트", path: "./part2/02_.jsx" },
+  { part: "part2", lesson: "03", title: "03_비즈니스 규칙이 담긴 스마트 티켓 예매 시스템", path: "./part2/03_.jsx" },
 
   // part3
   { part: "part3", lesson: "01", title: "01_타입스크립트", path: "./part3/01_.tsx" },
   { part: "part3", lesson: "02", title: "02_TypeScript 타입 실습", path: "./part3/02_.tsx" },
+  { part: "part3", lesson: "03", title: "03_제네릭과 extends로 재사용 가능한 컴포넌트 만들기", path: "./part3/03_.tsx" },
 
 ];
 
