@@ -1,5 +1,4 @@
 # React 학습 정리
-https://zenok80.github.io/study-react/
 
 # 기초
 
