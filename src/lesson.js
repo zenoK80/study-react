@@ -10,6 +10,12 @@ export const lessonFiles = [
   { part: "part1", lesson: "01", title: "01_React의 탄생과 JSX의 진짜 얼굴", path: "./part1/01_.jsx" },
   { part: "part1", lesson: "02", title: "02_React는 화면을 어떻게 그리고 바꿀까", path: "./part1/02_.jsx" },
   { part: "part1", lesson: "03", title: "03_나만의 첫 함수형 컴포넌트 만들기", path: "./part1/03_.jsx" },
+  { part: "part1", lesson: "04", title: "04_Props로 인사 메시지 바꾸기", path: "./part1/04_.jsx" },
+  { part: "part1", lesson: "05", title: "05_Props 구조 분해와 컴포넌트 합성 실습", path: "./part1/05_.jsx" },
+  { part: "part1", lesson: "06", title: "06_children과 단방향 데이터 흐름 실습", path: "./part1/06_.jsx" },
+  { part: "part1", lesson: "07", title: "07_map과 filter로 리스트를 효율적으로 렌더링하기", path: "./part1/07_.jsx" },
+  { part: "part1", lesson: "08", title: "08_React 이벤트 처리 실습", path: "./part1/08_.jsx" },
+  { part: "part1", lesson: "09", title: "09_React에서 State의 힘 느껴보기", path: "./part1/09_.jsx" },
 
   // part2
   { part: "part2", lesson: "01", title: "01_급식실 재고 관리 시스템 구현", path: "./part2/01_.jsx" },
