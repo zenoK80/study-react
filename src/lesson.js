@@ -16,6 +16,7 @@ export const lessonFiles = [
   { part: "part1", lesson: "07", title: "07_map과 filter로 리스트를 효율적으로 렌더링하기", path: "./part1/07_.jsx" },
   { part: "part1", lesson: "08", title: "08_React 이벤트 처리 실습", path: "./part1/08_.jsx" },
   { part: "part1", lesson: "09", title: "09_React에서 State의 힘 느껴보기", path: "./part1/09_.jsx" },
+  { part: "part1", lesson: "09", title: "10_이벤트와 State 결합", path: "./part1/09_.jsx" },
 
   // part2
   { part: "part2", lesson: "01", title: "01_급식실 재고 관리 시스템 구현", path: "./part2/01_.jsx" },
